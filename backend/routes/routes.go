@@ -2,6 +2,7 @@ package routes
 
 import (
 	"backend/controllers"
+	"backend/middleware"
 	"database/sql"
 
 	"github.com/gorilla/mux"
@@ -11,19 +12,26 @@ import (
 func SetupRoutes(db *sql.DB) *mux.Router {
 	r := mux.NewRouter()
 
-	// Rotas para clientes
-	r.HandleFunc("/clientes", controllers.GetClientes(db)).Methods("GET")
-	r.HandleFunc("/cliente", controllers.CreateCliente(db)).Methods("POST")
-	r.HandleFunc("/cliente/{id}", controllers.GetClienteByID(db)).Methods("GET")
-	r.HandleFunc("/cliente/{id}", controllers.UpdateCliente(db)).Methods("PUT")
-	r.HandleFunc("/cliente/{id}", controllers.DeleteCliente(db)).Methods("DELETE")
+	// Rota para login
+	r.HandleFunc("/login", controllers.LoginController).Methods("POST")
 
-	// Rotas para produtos
-	r.HandleFunc("/produtos", controllers.GetProdutos(db)).Methods("GET")
-	r.HandleFunc("/produto", controllers.CreateProduto(db)).Methods("POST")
-	r.HandleFunc("/produto/{id}", controllers.GetProdutoByID(db)).Methods("GET")
-	r.HandleFunc("/produto/{id}", controllers.UpdateProduto(db)).Methods("PUT")
-	r.HandleFunc("/produto/{id}", controllers.DeleteProduto(db)).Methods("DELETE")
+	// Middleware JWT para rotas de clientes
+	clientesRoute := r.PathPrefix("/clientes").Subrouter()
+	clientesRoute.Use(middleware.JWTMiddleware)
+	clientesRoute.HandleFunc("", controllers.GetClientes(db)).Methods("GET")
+	clientesRoute.HandleFunc("", controllers.CreateCliente(db)).Methods("POST")
+	clientesRoute.HandleFunc("/{id}", controllers.GetClienteByID(db)).Methods("GET")
+	clientesRoute.HandleFunc("/{id}", controllers.UpdateCliente(db)).Methods("PUT")
+	clientesRoute.HandleFunc("/{id}", controllers.DeleteCliente(db)).Methods("DELETE")
+
+	// Middleware JWT para rotas de produtos
+	produtosRoute := r.PathPrefix("/produtos").Subrouter()
+	produtosRoute.Use(middleware.JWTMiddleware)
+	produtosRoute.HandleFunc("", controllers.GetProdutos(db)).Methods("GET")
+	produtosRoute.HandleFunc("", controllers.CreateProduto(db)).Methods("POST")
+	produtosRoute.HandleFunc("/{id}", controllers.GetProdutoByID(db)).Methods("GET")
+	produtosRoute.HandleFunc("/{id}", controllers.UpdateProduto(db)).Methods("PUT")
+	produtosRoute.HandleFunc("/{id}", controllers.DeleteProduto(db)).Methods("DELETE")
 
 	return r
 }

@@ -1,0 +1,101 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.container a {
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #9c27b0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  max-width: fit-content;
+}
+
+.container a:hover {
+  background-color: #681b75;
+}
+
+.container label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.container input {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.container .update {
+  background-color: rgb(4, 80, 21);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.container .update:hover {
+  background-color: rgb(1, 24, 6);
+  cursor: pointer;
+}
+
+.container .delete {
+  background-color: rgb(175, 46, 29);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.container .delete:hover {
+  background-color: rgb(99, 26, 17);
+  cursor: pointer;
+}
+
+.container .confirmation {
+  text-align: center;
+}
+
+.container .confirmation .red{
+  background-color: rgb(184, 11, 11);
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  margin-left: 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+.container .confirmation .red:hover{
+  cursor: pointer;
+  background-color: rgb(102, 6, 6);
+}
+
+.container .confirmation .green {
+  background-color: rgb(7, 114, 30);
+  margin-left: 20px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  color:white;
+  border-radius: 5px;
+}
+
+.container .confirmation .green:hover {
+  background-color: rgb(2, 54, 14);
+  cursor: pointer;
+}

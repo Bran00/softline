@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container form input {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.container form button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.container form button:hover {
+  background-color: #12568f;
+}
+
+.container button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: hsl(0, 81%, 54%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.container button:hover {
+  background-color: hsl(0, 69%, 36%);
+}
+
+.container .confirmation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  bottom: 100vh;
+  font-size: 26px;
+  margin: auto;
+  height: 90vh;
+  background-color: rgb(255, 255, 255);
+}
+
+.container a {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 20px;
+}

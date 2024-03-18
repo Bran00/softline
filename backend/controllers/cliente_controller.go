@@ -4,7 +4,6 @@ import (
 	"backend/models"
 	"database/sql"
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -18,7 +17,6 @@ func CreateCliente(db *sql.DB) http.HandlerFunc {
 			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
-		fmt.Print(cliente)
 
 		// Verificar se há campos vazios
 		if cliente.Nome == "" || cliente.Fantasia == "" || cliente.Documento == "" || cliente.Endereco == "" {

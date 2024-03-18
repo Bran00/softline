@@ -77,6 +77,7 @@ func LoginController(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"message": "Login bem-sucedido",
 		"token":   tokenString,
+		"user": userAdmin,
 	})
 }
 

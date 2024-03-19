@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS produtos (
     peso_bruto DECIMAL(10, 2),
     peso_liquido DECIMAL(10, 2)
 );
-
+```
 
 ### Backend
 1. Clone o repositório do projeto.

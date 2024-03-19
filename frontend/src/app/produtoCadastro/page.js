@@ -67,13 +67,13 @@ const CadastroProduto = () => {
         />
         <input
           type="number"
-          placeholder="Peso Bruto"
+          placeholder="Peso Bruto em KG"
           value={pesoBruto}
           onChange={(e) => setPesoBruto(e.target.value)}
         />
         <input
           type="number"
-          placeholder="Peso Líquido"
+          placeholder="Peso Líquido em KG"
           value={pesoLiquido}
           onChange={(e) => setPesoLiquido(e.target.value)}
         />

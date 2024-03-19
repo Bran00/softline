@@ -33,7 +33,7 @@ const Produto = () => {
   };
 
   const filteredProdutos = produtos.filter((produto) =>
-    produto.nome.toLowerCase().includes(searchTerm.toLowerCase()) || produto.descricao.toLowerCase().includes(searchTerm.toLocaleLowerCase) || produto.codigo_barras.includes(searchTerm)
+    produto.nome.toLowerCase().includes(searchTerm.toLowerCase()) || produto.descricao.toLowerCase().includes(searchTerm.toLocaleLowerCase()) || produto.codigo_barras.includes(searchTerm)
   );
 
   if (error) {
@@ -61,8 +61,8 @@ const Produto = () => {
                 <strong>Descrição:</strong> {produto.descricao}<br />
                 <strong>Código de Barras:</strong> {produto.codigo_barras}<br />
                 <strong>Valor de Venda:</strong> R$ {produto.valor_venda}<br />
-                <strong>Peso Bruto:</strong> {produto.peso_bruto}<br />
-                <strong>Peso Líquido:</strong> {produto.peso_liquido}<br />
+                <strong>Peso Bruto:</strong> {produto.peso_bruto} Kilos<br />
+                <strong>Peso Líquido:</strong> {produto.peso_liquido} Kilos<br />
           </li>
 
             </Link>
